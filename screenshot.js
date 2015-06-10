@@ -16,7 +16,7 @@ RenderUrlsToFile = function(urls, callbackPerUrl, callbackFinal) {
     webpage = require("webpage");
     page = null;
     getFilename = function(url) {
-        return url.substring(7, url.search(/\./)) + '.png';
+        return url.substring(7, url.search(/\w\//) + 1) + '.png';
     };
     next = function(status, url, file) {
         page.close();
